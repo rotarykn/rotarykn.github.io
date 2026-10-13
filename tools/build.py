@@ -102,6 +102,11 @@ def main(src, out):
     shutil.copytree(os.path.join(src, 'img'), os.path.join(out, 'img'))
     open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(t)
     open(os.path.join(out, '.nojekyll'), 'w').close()
+    # A post added after the last sync has no p/<id>.html yet; send it to the post anyway.
+    open(os.path.join(out, '404.html'), 'w', encoding='utf-8').write(
+        '<!doctype html><meta charset="utf-8"><title>高雄北區扶輪社</title><script>'
+        'var m=/^\\/p\\/([^\\/]+)\\.html$/.exec(location.pathname);'
+        "location.replace(m?'/#ev-'+m[1]:'/')</script>\n")
 
     os.makedirs(os.path.join(out, 'p'))
     n = 0
