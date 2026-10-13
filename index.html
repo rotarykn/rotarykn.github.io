@@ -5,6 +5,8 @@
 
 <meta charset="utf8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 
+<meta charset="utf8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+
 <meta charset="utf8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 
 <meta charset="utf8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
@@ -431,7 +433,7 @@ tr.cur td{background:rgba(242,184,58,.2)}
 <h1>高雄北區扶輪社<span>Rotary Club of Kaohsiung North</span></h1>
 <p>集結高雄各行各業的專業人士，以「超我服務」連結社區與世界。歡迎你來參加例會，認識我們。</p>
 <div class="ctas"><a class="cta" href="https://canva.link/rotarykn-rotarian" target="_blank" rel="noopener">加入我們</a><a class="cta ghost" href="#news">最新消息</a></div>
-<div class="sbar"><span id="scap">Nature地區總監公式訪問</span><span id="dots" class="dots"></span></div>
+<div class="sbar"><span id="scap">守護慢飛 中秋傳愛　社區服務活動</span><span id="dots" class="dots"></span></div>
 </div></div>
 
 <main>
@@ -812,7 +814,7 @@ const a=el('article','ev'),im=norm(it.imgs);if(it.id)a.id='ev-'+it.id;if(im.leng
 {const tx=String(it.body||'').trim();let ps=tx.split(/\n\s*\n/).map(x=>x.trim()).filter(Boolean);if(ps.length<2&&tx.indexOf('\n')>-1)ps=tx.split(/\n/).map(x=>x.trim()).filter(Boolean);
 const bd=el('div','evb flow');ps.forEach((t,k)=>bd.append(el('p',k?'':'lead',t)));a.append(bd);
 const R=roles5(im),T=[];if(R.L)T.push([R.L,'L']);if(R.M)T.push([R.M,'s']);const vu=/^https?:\/\//.test(it.video||'')?it.video:'';const al=/^https?:\/\//.test(it.album||'')?it.album:'';
-const vt=()=>{const v=el('a','c5v');v.href=vu;v.target='_blank';v.rel='noopener';v.setAttribute('aria-label','觀看影片：'+it.title);if(it.vimg){const i=new Image();i.src=it.vimg;i.alt='影片截圖';v.append(i)}v.append(el('span','pl','▶'),el('span','c5l','觀看影片'));return v};
+const vt=()=>{const v=el('a','c5v');v.href=vu;v.target='_blank';v.rel='noopener';v.setAttribute('aria-label','觀看影片：'+it.title);if(it.vimg){const i=new Image();i.src=it.vimg;i.alt='影片截圖';v.append(i)}v.append(el('span','pl','▶'),el('span','c5l','觀看影片'));{const y=/(?:youtu\.be\/|[?&]v=|\/(?:shorts|embed|live)\/)([\w-]{11})/.exec(vu);if(y)v.addEventListener('click',e=>{e.preventDefault();if(v.querySelector('iframe'))return;const f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+y[1]+'?autoplay=1&playsinline=1&rel=0';f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.title=it.title;f.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3;background:#000';v.style.position='relative';if(matchMedia('(max-width:700px)').matches){v.style.setProperty('grid-column','1/-1','important');v.style.setProperty('aspect-ratio','16/9','important')}v.append(f)})}return v};
 if(vu&&(T.length||it.vimg))T.push([null,'v']);R.S.forEach(o=>T.push([o,'s']));
 if(T.length){const g=el('div','c5 n'+Math.min(T.length,6)+(li%2?' mir':''));T.forEach(([o,k],j)=>{let t;if(k==='v')t=vt();else{t=fig(o,it.title);{const im2=t.querySelector('img');if(im2)im2.style.objectPosition='50% '+({t:'0%',c:'50%',b:'100%'}[o.y]||'22%')}if(k==='L'&&al){const m=el('a','c5more');m.href=al;m.target='_blank';m.rel='noopener';m.innerHTML='<span aria-hidden="true">📷</span> 看完整相簿';t.append(m)}}t.classList.add('c5t','c5-'+(j+1));g.append(t)});a.append(g)}
 else if(vu){const v=el('a','btn','觀看影片');v.href=vu;v.target='_blank';v.rel='noopener';a.append(v)}
@@ -1340,6 +1342,7 @@ article.ev>.eg:not(.fl) figure:nth-child(n) img{width:100%!important;height:auto
 .ev .vp{display:block;max-width:520px;margin-top:14px}
 </style>
 <style id="v32">@media(min-width:641px){article.ev.one:not(.bone) .eg,article.ev.one:not(.bone) .eg.fl,article.ev.one:not(.bone) .eg.fl.bg,article.ev.one:not(.bone) .eg.fl.bg.pt,article.ev.one:not(.bone) .eg.fl.pt{width:100%!important;max-width:280px!important;padding-left:0!important}article.ev.one:not(.bone) .eg figure:nth-child(n){max-width:280px!important;width:100%!important;flex:none!important}article.ev.one.bone .eg.fl,article.ev.one.bone .eg.fl.bg,article.ev.one.bone .eg.fl.pt,article.ev.one.bone .eg.fl.bg.pt{width:56%!important;max-width:560px!important}article.ev.one.bone .eg:not(.fl){max-width:640px!important;width:100%!important}article.ev.one.bone .eg figure:nth-child(n){max-width:none!important;width:100%!important;flex:none!important}}</style>
+
 
 
 

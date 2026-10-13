@@ -31,6 +31,16 @@ DEEPLINK_JS = (
     "window.addEventListener('hashchange',go);go()})();"
 )
 
+# Runs inside the video tile builder, where v is the tile link and vu the video URL.
+YT_INLINE_JS = (
+    "{const y=/(?:youtu\\.be\\/|[?&]v=|\\/(?:shorts|embed|live)\\/)([\\w-]{11})/.exec(vu);"
+    "if(y)v.addEventListener('click',e=>{e.preventDefault();if(v.querySelector('iframe'))return;"
+    "const f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+y[1]+'?autoplay=1&playsinline=1&rel=0';"
+    "f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.title=it.title;"
+    "f.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3;background:#000';"
+    "v.style.position='relative';if(matchMedia('(max-width:700px)').matches){v.style.setProperty('grid-column','1/-1','important');v.style.setProperty('aspect-ratio','16/9','important')}v.append(f)})}"
+)
+
 
 def sub_once(pattern, repl, text, label):
     new, n = re.subn(pattern, repl, text, count=1)
@@ -94,6 +104,9 @@ def main(src, out):
     og = ('<meta property="og:title" content="高雄北區扶輪社">'
           '<meta property="og:description" content="高雄北區扶輪社官方網站：例會、活動花絮、社友與歷屆大事紀。">'
           '<meta property="og:url" content="%s/">' % SITE)
+    # YouTube videos play inside the photo tile instead of opening a new tab.
+    t = sub_once(r"v\.append\(el\('span','pl','▶'\),el\('span','c5l','觀看影片'\)\);return v\}",
+                 lambda m: m.group(0)[:-len('return v}')] + YT_INLINE_JS + 'return v}', t, 'video tile')
     t = sub_once(r'<title>高雄北區扶輪社</title>', '<title>高雄北區扶輪社</title>' + og, t, 'title')
     t = sub_once(r"renderMembers\(\);route\(\);Object\.keys\(YF\)",
                  lambda m: 'renderMembers();route();' + DEEPLINK_JS + 'Object.keys(YF)', t, 'startup code')
