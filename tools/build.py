@@ -51,11 +51,26 @@ def sub_once(pattern, repl, text, label):
 
 def first_image(it):
     imgs = [o for o in (it.get('imgs') or []) if isinstance(o, dict) and o.get('s') and not o['s'].startswith('data:')]
-    pick = next((o for o in imgs if o.get('b')), imgs[0] if imgs else None)
+    pick = next((o for o in imgs if o.get('z') == 'L'), None) or next((o for o in imgs if o.get('b')), imgs[0] if imgs else None)
     return pick['s'] if pick else ''
 
 
-def post_page(it):
+def jpeg_size(path):
+    # Facebook shows the preview photo on the first share only when it is told the size up front.
+    try:
+        d = open(path, 'rb').read()
+    except OSError:
+        return None
+    i = 2
+    while i + 9 < len(d) and d[i] == 0xFF:
+        m, n = d[i + 1], int.from_bytes(d[i + 2:i + 4], 'big')
+        if m in (0xC0, 0xC1, 0xC2):
+            return int.from_bytes(d[i + 7:i + 9], 'big'), int.from_bytes(d[i + 5:i + 7], 'big')
+        i += 2 + n
+    return None
+
+
+def post_page(it, src):
     pid = str(it['id'])
     title = it.get('title') or '活動花絮'
     body = re.sub(r'\s+', ' ', it.get('body') or '').strip()
@@ -72,6 +87,10 @@ def post_page(it):
     ]
     if img:
         tags.append('<meta property="og:image" content="%s/%s">' % (SITE, e(img)))
+        size = jpeg_size(os.path.join(src, img))
+        if size:
+            tags.append('<meta property="og:image:type" content="image/jpeg">'
+                        '<meta property="og:image:width" content="%d"><meta property="og:image:height" content="%d">' % size)
     return ('<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1">'
             '<title>%s｜高雄北區扶輪社</title><meta name="description" content="%s">%s'
@@ -129,7 +148,7 @@ def main(src, out):
         if f.startswith('events-') and f.endswith('.json'):
             for it in json.load(open(os.path.join(src, 'data', f), encoding='utf-8')):
                 if it.get('id'):
-                    open(os.path.join(out, 'p', str(it['id']) + '.html'), 'w', encoding='utf-8').write(post_page(it))
+                    open(os.path.join(out, 'p', str(it['id']) + '.html'), 'w', encoding='utf-8').write(post_page(it, src))
                     n += 1
     print('built index.html, %d members, %d post pages' % (len(members), n))
 
