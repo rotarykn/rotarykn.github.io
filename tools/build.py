@@ -85,8 +85,10 @@ def main(src, out):
     t = t[:m.start(2)] + json.dumps(members, ensure_ascii=False).replace('</', '<\\/') + t[m.end(2):]
 
     t = sub_once(r'｜<a href="#admin">消息管理</a>', '', t, 'admin link')
-    t = sub_once(r"encodeURIComponent\('" + re.escape(ARTIFACT) + r"'\)",
-                 "encodeURIComponent('" + SITE + "/p/'+encodeURIComponent(it.id)+'.html')", t, 'share url')
+    # The back end's share button already points at SITE/p/<id>.html; older copies pointed at the artifact.
+    if SITE + "/p/'" not in t:
+        t = sub_once(r"encodeURIComponent\('" + re.escape(ARTIFACT) + r"'\)",
+                     "encodeURIComponent('" + SITE + "/p/'+encodeURIComponent(it.id)+'.html')", t, 'share url')
     t = sub_once(r"const a=el\('article','ev'\),im=norm\(it\.imgs\);",
                  "const a=el('article','ev'),im=norm(it.imgs);if(it.id)a.id='ev-'+it.id;", t, 'event article')
     og = ('<meta property="og:title" content="高雄北區扶輪社">'
