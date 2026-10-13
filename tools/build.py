@@ -114,6 +114,7 @@ def main(src, out):
     t = t[:m.start(2)] + json.dumps(members, ensure_ascii=False).replace('</', '<\\/') + t[m.end(2):]
 
     t = sub_once(r'｜<a href="#admin">消息管理</a>', '', t, 'admin link')
+    t = sub_once(r'\n?<a class="admbtn" href="#admin"[^>]*>[^<]*</a>', '', t, 'admin button')
     # The back end's share button already points at SITE/p/<id>.html; older copies pointed at the artifact.
     if SITE + "/p/'" not in t:
         t = sub_once(r"encodeURIComponent\('" + re.escape(ARTIFACT) + r"'\)",
