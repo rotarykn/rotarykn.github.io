@@ -172,6 +172,45 @@ box-shadow:inset 0 0 0 1px rgba(255,240,200,.35),0 1px 3px rgba(60,40,0,.25),0 8
 .eg figure:hover{box-shadow:inset 0 0 0 1px rgba(255,240,200,.45),0 2px 5px rgba(60,40,0,.28),0 16px 30px rgba(70,48,5,.30)}
 .eg figcaption{padding:7px 8px 8px;font-size:12.5px;color:#e6cf8f;border-top:1px solid rgba(230,207,143,.3)}
 @media(max-width:420px){.eg figure{padding:3px}.eg figure::after{inset:3px}}
+</style><style id="v10">
+.c5{--h:clamp(112px,14.5vw,172px);display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:var(--h) var(--h);gap:16px;margin:26px 2px 8px;padding:6px 4px}
+.c5.mir{direction:rtl}.c5>*{direction:ltr}
+.c5 .c5t{position:relative;margin:0;min-width:0;min-height:0;overflow:hidden;border-radius:6px;padding:4px;background:linear-gradient(135deg,#d9bc78 0%,#b08a3a 28%,#d2b46c 50%,#8c6a22 74%,#c9a95b 100%);box-shadow:0 2px 4px rgba(60,40,0,.22),0 10px 22px rgba(6,21,64,.18);transform:rotate(var(--r,0deg));transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.c5 .c5t:hover{transform:rotate(0) translateY(-5px) scale(1.02);box-shadow:0 4px 8px rgba(60,40,0,.25),0 22px 40px rgba(6,21,64,.3);z-index:3}
+.c5 .c5t img{display:block;width:100%;height:100%;object-fit:cover;border-radius:3px;cursor:zoom-in;background:#0b1a45}
+.c5 figcaption{position:absolute;left:4px;right:4px;bottom:4px;margin:0;padding:20px 10px 7px;font-size:12.5px;line-height:1.45;color:#fff;background:linear-gradient(0deg,rgba(3,10,36,.85),transparent);border-radius:0 0 3px 3px;opacity:0;transition:opacity .25s}
+.c5 .c5t:hover figcaption{opacity:1}
+.c5 .c5-1{--r:-.6deg}.c5 .c5-2{--r:1deg}.c5 .c5-3{--r:-1.1deg}.c5 .c5-4{--r:.8deg}.c5 .c5-5{--r:-.7deg}.c5 .c5-6{--r:1.1deg}
+.c5more{position:absolute;right:14px;top:14px;z-index:2;display:inline-flex;gap:6px;align-items:center;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.94);color:#0b2467!important;font-weight:700;font-size:13.5px;text-decoration:none;box-shadow:0 4px 14px rgba(3,10,36,.35);transition:transform .15s}
+.c5more:hover{transform:translateY(-1px);background:#ffe08a}
+.c5v{display:block;color:#fff;text-decoration:none;background:linear-gradient(135deg,#040d2b,#0b2467 60%,#7a5d12)!important}
+.c5v .pl{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;display:grid;place-items:center;font-size:24px;background:linear-gradient(135deg,#ffe08a,#f2b83a);color:#14213d;box-shadow:0 0 0 6px rgba(242,184,58,.25),0 0 26px rgba(242,184,58,.45);transition:transform .2s}
+.c5v:hover .pl{transform:scale(1.1)}
+.c5v .c5l{position:absolute;left:4px;right:4px;bottom:4px;padding:18px 10px 7px;font-weight:700;font-size:13px;letter-spacing:.1em;background:linear-gradient(0deg,rgba(3,10,36,.85),transparent);border-radius:0 0 3px 3px}
+/* 1 張 */
+.c5.n1{display:block;max-width:640px}.c5.n1 .c5t{height:auto}.c5.n1 .c5t img{height:auto;object-fit:contain}
+/* 2 張 */
+.c5.n2 .c5-1{grid-column:1/8;grid-row:1/3}.c5.n2 .c5-2{grid-column:8/13;grid-row:1/3}
+/* 3 張 */
+.c5.n3 .c5-1{grid-column:1/8;grid-row:1/3}.c5.n3 .c5-2{grid-column:8/13;grid-row:1}.c5.n3 .c5-3{grid-column:8/13;grid-row:2}
+/* 4 張 */
+.c5.n4 .c5-1{grid-column:1/8;grid-row:1/3}.c5.n4 .c5-2{grid-column:8/13;grid-row:1}.c5.n4 .c5-3{grid-column:8/11;grid-row:2}.c5.n4 .c5-4{grid-column:11/13;grid-row:2}
+/* 5 張 */
+.c5.n5{grid-template-rows:var(--h) var(--h) calc(var(--h)*1.25)}
+.c5.n5 .c5-1{grid-column:1/8;grid-row:1/3}.c5.n5 .c5-2{grid-column:8/13;grid-row:1}.c5.n5 .c5-3{grid-column:8/13;grid-row:2}.c5.n5 .c5-4{grid-column:1/6;grid-row:3}.c5.n5 .c5-5{grid-column:6/13;grid-row:3}
+/* 6 格（5 張＋影片） */
+.c5.n6{grid-template-rows:var(--h) var(--h) calc(var(--h)*1.2)}
+.c5.n6 .c5-1{grid-column:1/8;grid-row:1/3}.c5.n6 .c5-2{grid-column:8/13;grid-row:1}.c5.n6 .c5-3{grid-column:8/13;grid-row:2}.c5.n6 .c5-4{grid-column:1/5;grid-row:3}.c5.n6 .c5-5{grid-column:5/9;grid-row:3}.c5.n6 .c5-6{grid-column:9/13;grid-row:3}
+@media(max-width:700px){
+.c5,.c5.n5,.c5.n6{grid-template-columns:repeat(6,1fr);grid-template-rows:none;grid-auto-rows:auto;gap:12px;direction:ltr}
+.c5 .c5t{grid-column:span 3!important;grid-row:auto!important;aspect-ratio:1}
+.c5 .c5-1{grid-column:span 6!important;aspect-ratio:4/3}
+.c5 .c5t:last-child:nth-child(even){grid-column:span 6!important;aspect-ratio:16/9}
+.c5.n1 .c5t{aspect-ratio:auto}
+.c5more{right:10px;top:10px;font-size:12.5px;padding:6px 12px}
+.c5 figcaption{opacity:1;font-size:11.5px}}
+@media(hover:none){.c5 figcaption{opacity:1}}
+@media(prefers-reduced-motion:reduce){.c5 .c5t{transition:none}}
 </style><style id="v9">.fbsh{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:7px 16px;border-radius:999px;background:#1877f2;color:#fff!important;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 3px 10px rgba(24,119,242,.3);transition:transform .15s}.fbsh:hover{transform:translateY(-1px);background:#0f66d8}.ev .fbsh{clear:both}</style>
 
 
@@ -736,11 +775,12 @@ const CATS=['社務行政','社員發展','社區服務','職業服務','專題�
 const newsF=[['adate','活動日期（顯示在首頁標題前面的灰色日期，例如 2026.10.14）','t'],['date','發佈日期（選填，與活動日期不同時才會顯示在標題下方）','t'],['title','標題','t'],['body','內容（可換行）','a']];
 const evF=[['date','活動日期（例如 2026.09.23）','t'],['cat','活動類別','s',CATS],['title','標題','t'],['body','內容（可換行）','a']];
 const histF=[['no','屆次（數字，例如 50）','t'],['yr','年度（例如 2025-26）','t'],['pres','社長姓名','t'],['pn','社長社名（選填）','t'],['sec','秘書姓名（選填）','t'],['sn','秘書社名（選填）','t'],['slogan','年度口號（選填）','t'],['body','年度事紀（每行一項）','a'],['vids','年度影片（選填，每行一部：影片名稱｜Google 雲端硬碟分享連結）','a'],['mag','授證紀念特刊（選填，每行一份：名稱｜Google 雲端硬碟分享連結）','a']];
-const F={lead:[['role','職稱（例如 第51屆社長、第51屆秘書）','t'],['name','姓名','t'],['nick','社名（例如 P.SPARK）','t'],['cur','現任','t'],['job','職業分類','t'],['intro','介紹人','t'],['join','入社日期','t'],['donate','扶輪捐獻','t'],['body','其他簡介（選填，可換行）','a']],news:newsF,events:evF.concat([['video','影片連結（選填，YouTube／Facebook／LINE VOOM 網址）','t']]),
+const F={lead:[['role','職稱（例如 第51屆社長、第51屆秘書）','t'],['name','姓名','t'],['nick','社名（例如 P.SPARK）','t'],['cur','現任','t'],['job','職業分類','t'],['intro','介紹人','t'],['join','入社日期','t'],['donate','扶輪捐獻','t'],['body','其他簡介（選填，可換行）','a']],news:newsF,events:evF.concat([['video','影片連結（選填，YouTube／Facebook／LINE VOOM 網址）','t'],['album','雲端相簿連結（選填，Google 相簿／雲端硬碟網址，顯示「看更多照片」）','t']]),
 history:histF,members:[['no','排序編號（不公開顯示，例如 65）','t'],['name','姓名','t'],['nick','社名（例如 P.P.GOLF）','t'],['title','稱謂／職銜','t'],['bd','社友生日（月/日，例如 5/21）','t'],['spouse','夫人姓名','t'],['sbd','夫人生日（月/日）','t'],['ri','RI社籍','t'],['org','職業','t'],['job','職業分類','t'],['join','入社日期','t'],['intro','介紹人','t'],['term','社長／總監年度','t']]};
-const MAX={news:3,events:10,members:1,history:2,lead:1},KEY={news:'title',events:'title',members:'name',history:'pres',lead:'name'};
+const MAX={news:3,events:5,members:1,history:2,lead:1},KEY={news:'title',events:'title',members:'name',history:'pres',lead:'name'};
 const YF={'2026-27年度':'data/events-2026-27.json','2025-26年度':'data/events-2025-26.json','2024-25年度':'data/events-2024-25.json'},YL={};const isYF=x=>!!YF[fyr(x.date)];let art=null,can=false,tab='news',editing=null,imgs=[],sl=null,cv=null,vdr=null;
 function pic(o,alt,zoom){const im=new Image();im.src=o.s;im.alt=o.c||alt;if(zoom)im.onclick=()=>{const l=$('lb');l.querySelector('img').src=o.s;l.querySelector('p').textContent=o.c||'';l.showModal()};return im}
+function roles5(im){const a=im.slice(0,5),L=a.find(o=>o.z==='L')||a.find(o=>o.b&&o.z!=='M'&&o.z!=='S')||a.find(o=>!o.z)||a[0],M=a.find(o=>o!==L&&o.z==='M')||a.find(o=>o!==L&&!o.z)||null;return {L:L||null,M:M,S:a.filter(o=>o!==L&&o!==M).slice(0,3)}}
 function fig(o,alt){const f=el('figure');if(o.b)f.classList.add('big');const pi=pic(o,alt,true);pi.addEventListener('load',()=>{if(pi.naturalHeight>pi.naturalWidth*1.05){f.classList.add('pt');if(f.parentElement)f.parentElement.classList.add('pt')}const g=f.parentElement;if(g&&g.classList.contains('eg')&&!g.classList.contains('fl')){const a=pi.naturalWidth/pi.naturalHeight;f.style.flex=a.toFixed(3)+' 1 '+Math.round(a*165)+'px';f.style.maxWidth=Math.round(a*360)+'px'}});f.append(pi);if(o.c)f.append(el('figcaption',0,o.c));return f}
 function fmtNews(t,box){const dl=el('dl','kv');let any=false;
 const flush=()=>{if(dl.children.length){box.append(dl.cloneNode(true));dl.textContent=''}};
@@ -764,16 +804,16 @@ H.className='bento';CATS.forEach(c=>H.append(mk(c,'all')));
 if(evTab===null){L.className='cg bento';const tot=all.filter(x=>inY(x,evYr)).length,yb=el('div','yb'),yt=evYr==='all'?['全部','年度']:[evYr.replace('年度',''),'年度'];yb.append(el('b',0,yt[0]),el('span',0,yt[1]),el('small',0,'共 '+tot+' 則活動花絮'));T.append(yb,ysel());CATS.forEach(c=>L.append(mk(c,evYr)));L.classList.remove('pop');void L.offsetWidth;L.classList.add('pop')}
 else{L.className='';const bk=el('button','btn o','← 全部類別');bk.onclick=()=>{evTab=null;renderEvents()};T.append(bk,el('h3','ct',evTab),ysel());
 const list=all.filter(x=>cat(x)===evTab&&inY(x,evYr));if(!list.length)L.textContent=evYr==='all'?'這個類別目前沒有活動花絮。':'「'+evTab+'」在'+evYr+'目前沒有活動花絮。';
-let last='';list.forEach(it=>{const y=fyr(it.date);if(y!==last){L.append(el('h3','fy',y));last=y}
+let last='',li=0;list.forEach(it=>{const y=fyr(it.date);if(y!==last){L.append(el('h3','fy',y));last=y}
 const a=el('article','ev'),im=norm(it.imgs);if(it.id)a.id='ev-'+it.id;if(im.length===1){a.classList.add('one');if(im[0].b)a.classList.add('bone')}a.append(el('h3',0,it.title),el('time',0,it.date));
 {const tx=String(it.body||'').trim();let ps=tx.split(/\n\s*\n/).map(x=>x.trim()).filter(Boolean);if(ps.length<2&&tx.indexOf('\n')>-1)ps=tx.split(/\n/).map(x=>x.trim()).filter(Boolean);
-const bd=el('div','evb flow'),m=ps.length,n=im.length,f=m&&tx.length>=320?Math.min(n,m,Math.max(1,Math.round(tx.length/190)),6):0;
-const ord=im.map((o,i)=>i).sort((x,y)=>(im[y].b?1:0)-(im[x].b?1:0)||x-y).slice(0,f).sort((x,y)=>x-y),fl={};ord.forEach((i,j)=>{const k=Math.min(m-1,Math.floor(j*m/f));fl[k]=i});
-const put=(o,i)=>{const w=el('div','eg fl '+(i%2?'lf':'rt')+(o.b?' bg':'')+' r'+(i%3));w.append(fig(o,it.title));bd.append(w)};
-ps.forEach((t,k)=>{if(fl[k]!==undefined)put(im[fl[k]],ord.indexOf(fl[k]));const p=el('p',k?'':'lead',t);bd.append(p)});
-a.append(bd);const rest=im.filter((o,i)=>ord.indexOf(i)<0);if(rest.length){const g=el('div','eg');rest.forEach(o=>g.append(fig(o,it.title)));a.append(g)}}
-
-if(/^https?:\/\//.test(it.video||'')){const ps=it.vimg||(im[0]&&im[0].s);if(ps){const v=el('a','vp');v.href=it.video;v.target='_blank';v.rel='noopener';v.setAttribute('aria-label','觀看影片：'+it.title);const i=new Image();i.src=ps;i.alt='影片截圖';v.append(i,el('span','pl','▶'));a.append(v)}else{const v=el('a','btn','觀看影片');v.href=it.video;v.target='_blank';v.rel='noopener';a.append(v)}}
+const bd=el('div','evb flow');ps.forEach((t,k)=>bd.append(el('p',k?'':'lead',t)));a.append(bd);
+const R=roles5(im),T=[];if(R.L)T.push([R.L,'L']);if(R.M)T.push([R.M,'s']);const vu=/^https?:\/\//.test(it.video||'')?it.video:'';const al=/^https?:\/\//.test(it.album||'')?it.album:'';
+const vt=()=>{const v=el('a','c5v');v.href=vu;v.target='_blank';v.rel='noopener';v.setAttribute('aria-label','觀看影片：'+it.title);if(it.vimg){const i=new Image();i.src=it.vimg;i.alt='影片截圖';v.append(i)}v.append(el('span','pl','▶'),el('span','c5l','觀看影片'));return v};
+if(vu&&(T.length||it.vimg))T.push([null,'v']);R.S.forEach(o=>T.push([o,'s']));
+if(T.length){const g=el('div','c5 n'+Math.min(T.length,6)+(li%2?' mir':''));T.forEach(([o,k],j)=>{let t;if(k==='v')t=vt();else{t=fig(o,it.title);if(k==='L'&&al){const m=el('a','c5more');m.href=al;m.target='_blank';m.rel='noopener';m.innerHTML='<span aria-hidden="true">📷</span> 看完整相簿';t.append(m)}}t.classList.add('c5t','c5-'+(j+1));g.append(t)});a.append(g)}
+else if(vu){const v=el('a','btn','觀看影片');v.href=vu;v.target='_blank';v.rel='noopener';a.append(v)}
+li++}
 {const s=el('a','fbsh');s.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(it.id?'https://rotarykn.github.io/p/'+encodeURIComponent(it.id)+'.html':'https://rotarykn.github.io/');s.target='_blank';s.rel='noopener';s.setAttribute('aria-label','分享「'+it.title+'」到 Facebook');s.innerHTML='<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5H17V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.4H8v3.2h2.6v8z"/></svg><span>分享到 FB</span>';s.onclick=()=>{try{const t=[it.title,it.date?'📅 '+it.date:'','',(it.body||'').trim()].join('\n').trim();navigator.clipboard&&navigator.clipboard.writeText(t).catch(()=>{})}catch(e){}};a.append(s)}
 L.append(a)})}}
 let hq='all';
@@ -942,7 +982,7 @@ c.querySelector('#events-data').textContent=JSON.stringify(S.events.filter(x=>!i
 const out={'index.html':'<!DOCTYPE html>\n'+c.outerHTML};
 for(const y in YF){const yl=S.events.filter(x=>fyr(x.date)===y),ys=y.slice(0,7);
 yl.forEach(e=>{const sv=(s,n)=>{if(typeof s==='string'&&s.indexOf('data:')===0){const p='img/'+ys+'/'+n+'.jpg',bs=atob(s.split(',')[1]),u=new Uint8Array(bs.length);for(let i=0;i<bs.length;i++)u[i]=bs.charCodeAt(i);out[p]={content:new Blob([u],{type:'image/jpeg'}),contentType:'image/jpeg'};return p}return s};
-e.imgs=norm(e.imgs).map((o,k)=>({s:sv(o.s,e.id+'_'+k+'_'+Date.now().toString(36)),c:o.c,b:o.b}));if(e.vimg)e.vimg=sv(e.vimg,e.id+'_v_'+Date.now().toString(36))});
+e.imgs=norm(e.imgs).map((o,k)=>({s:sv(o.s,e.id+'_'+k+'_'+Date.now().toString(36)),c:o.c,b:o.b,z:o.z}));if(e.vimg)e.vimg=sv(e.vimg,e.id+'_v_'+Date.now().toString(36))});
 out[YF[y]]=JSON.stringify(yl)}
 return art.publish(out).catch(e=>{msg.textContent=e&&e.code==='conflict'?'有人同時修改了網站，頁面將重新載入，請再操作一次。':'儲存失敗：'+((e&&(e.message||e.code))||'未知錯誤')})}
 const CT=(()=>{const t=[];for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
@@ -1001,7 +1041,7 @@ if(tab==='slides'){renderSlides(B,msg);return}if(tab==='covers'){renderCovers(B,
 if(editing===null){const T=el('div','tabs');Object.keys(NM).forEach(k=>{const b=el('button','btn'+(k===tab?'':' o'),NM[k]);b.onclick=()=>{tab=k;sl=cv=vdr=null;renderAdmin()};T.append(b)});B.append(T);
 const nb=el('button','btn','新增'+NM[tab]);nb.onclick=()=>{editing=-1;imgs=[];renderAdmin()};B.append(nb);
 A.forEach((it,i)=>{const r=el('div','arow');r.append(el('time',0,mb?'NO.'+it.no:tab==='history'?'第'+it.no+'屆 '+it.yr:tab==='news'?(it.adate||it.date):tab==='lead'?it.role:it.date),el('b',0,it[KEY[tab]]));
-const e=el('button','btn o','編輯');e.onclick=()=>{editing=i;imgs=norm(it.imgs).map(o=>({s:o.s,c:o.c,b:o.b}));renderAdmin()};
+const e=el('button','btn o','編輯');e.onclick=()=>{editing=i;imgs=norm(it.imgs).map(o=>({s:o.s,c:o.c,b:o.b,z:o.z}));renderAdmin()};
 const d=el('button','btn r','刪除');d.onclick=()=>{if(confirm('確定刪除「'+it[KEY[tab]]+'」？此動作無法復原。')){A.splice(i,1);persist(msg)}};
 r.append(e,d);if(tab==='events'){const f=el('button','btn','複製臉書貼文');f.onclick=()=>copyFb(it,msg,B);const g=el('button','btn o','下載照片');g.onclick=()=>dlPhotos(it,msg);r.append(f,g)}B.append(r)});B.append(msg);return}
 const it=editing>=0?A[editing]:{},ins={};B.append(el('h3',0,(editing>=0?'編輯':'新增')+NM[tab]));
@@ -1010,7 +1050,7 @@ const fi=el('input');fi.type='file';fi.accept='image/*';fi.multiple=MX>1;const t
 let dragK=-1;function thumbs(){th.textContent='';imgs.forEach((o,k)=>{const w=el('div');w.append(pic(o,'',false));
 if(!mb&&imgs.length>1){w.draggable=true;w.classList.add('dg');w.ondragstart=e=>{dragK=k;e.dataTransfer.effectAllowed='move';try{e.dataTransfer.setData('text/plain',''+k)}catch(_){}w.classList.add('dragging')};w.ondragend=()=>{w.classList.remove('dragging');th.querySelectorAll('.over').forEach(n=>n.classList.remove('over'))};w.ondragover=e=>{e.preventDefault();w.classList.add('over')};w.ondragleave=()=>w.classList.remove('over');w.ondrop=e=>{e.preventDefault();if(dragK<0||dragK===k)return;const m=imgs.splice(dragK,1)[0];imgs.splice(k,0,m);dragK=-1;thumbs()}}
 if(!mb){const ci=el('input');ci.type='text';ci.placeholder='照片說明';ci.value=o.c||'';ci.oninput=()=>{o.c=ci.value};w.append(ci)}
-if(!mb&&tab==='events'){const bt=el('button','btn o',o.b?'✓ 大圖':'設為大圖');bt.style.padding='2px 10px';bt.onclick=()=>{o.b=o.b?0:1;thumbs()};w.append(bt)}
+if(!mb&&tab==='events'){const R=roles5(imgs),cur=R.L===o?'L':R.M===o?'M':'S',se=el('select');se.title='照片大小';se.style.cssText='font:inherit;font-size:13px;padding:2px 4px;margin-top:4px;width:96px';[['L','大圖'],['M','中圖'],['S','小圖']].forEach(([v,t])=>{const op=el('option',0,t);op.value=v;se.append(op)});se.value=cur;se.onchange=()=>{const v=se.value;imgs.forEach(x=>{if(x!==o&&roles5(imgs)[v]===x&&v!=='S')x.z='S';x.b=0});o.z=v;thumbs()};w.append(se)}
 const lf=el('button','btn o','←'),rt=el('button','btn o','→');lf.title='往前移';rt.title='往後移';lf.style.padding=rt.style.padding='2px 10px';lf.disabled=k===0;rt.disabled=k===imgs.length-1;
 lf.onclick=()=>{imgs.splice(k-1,0,imgs.splice(k,1)[0]);thumbs()};rt.onclick=()=>{imgs.splice(k+1,0,imgs.splice(k,1)[0]);thumbs()};
 const x=el('button','btn r','移除');x.style.padding='2px 10px';x.onclick=()=>{imgs.splice(k,1);thumbs()};if(!mb&&imgs.length>1)w.append(el('span','no',(k+1)+'/'+imgs.length));w.append(x);th.append(w)})}
