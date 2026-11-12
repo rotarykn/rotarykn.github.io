@@ -102,6 +102,9 @@ def post_page(it, src):
 
 
 def main(src, out):
+    for d in ('data', 'img'):
+        if not os.path.isdir(os.path.join(src, d)):
+            sys.exit('source folder is missing ' + d + '/; download the full artifact before building')
     t = open(os.path.join(src, 'index.html'), encoding='utf-8').read()
 
     m = re.search(r'(<script type="application/json" id="members-data">)(.*?)(</script>)', t, re.S)
