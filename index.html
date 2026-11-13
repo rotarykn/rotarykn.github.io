@@ -815,7 +815,7 @@ button.cal-c:hover{border-color:var(--gold)}
 const $=i=>document.getElementById(i),el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e},rd=i=>JSON.parse($(i).textContent);
 const norm=a=>(a||[]).map(x=>typeof x==='string'?{s:x,c:''}:x);
 const S={news:rd('news-data'),events:rd('events-data'),members:rd('members-data'),slides:rd('slides-data'),history:rd('history-data'),covers:rd('evcovers-data'),video:rd('video-data'),cal:rd('cal-data'),lead:rd('lead-data')},NM={news:'最新消息',events:'活動花絮',covers:'活動花絮封面',members:'社友通訊錄',history:'歷屆大事紀',slides:'首頁輪播',video:'精選影片',cal:'行事曆',lead:'本屆社長秘書'};
-const CATS=['社務行政','社員發展','社區服務','職業服務','專題演講','聯誼活動','姐妹社交流','社慶活動'];let evTab=null,evYr='all';
+const CATS=['社務行政','社員發展','社區服務','職業服務','專題演講','聯誼活動','姐妹社交流','社慶活動','高球同好會','高雄北區社樂團'];let evTab=null,evYr='all';
 const newsF=[['adate','活動日期（顯示在首頁標題前面的灰色日期，例如 2026.10.14）','t'],['date','發佈日期（選填，與活動日期不同時才會顯示在標題下方）','t'],['title','標題','t'],['body','內容（可換行）','a']];
 const evF=[['date','活動日期（例如 2026.09.23）','t'],['cat','活動類別','s',CATS],['title','標題','t'],['body','內容（可換行）','a']];
 const histF=[['no','屆次（數字，例如 50）','t'],['yr','年度（例如 2025-26）','t'],['pres','社長姓名','t'],['pn','社長社名（選填）','t'],['sec','秘書姓名（選填）','t'],['sn','秘書社名（選填）','t'],['slogan','年度口號（選填）','t'],['body','年度事紀（每行一項）','a'],['vids','年度影片（選填，每行一部：影片名稱｜Google 雲端硬碟分享連結）','a'],['mag','授證紀念特刊（選填，每行一份：名稱｜Google 雲端硬碟分享連結）','a']];
@@ -843,7 +843,7 @@ function renderEvents(){const L=$('eventlist'),H=$('homeev'),T=$('evtabs');L.tex
 const all=S.events.slice().sort((a,b)=>dkey(b.date)-dkey(a.date)),cat=x=>x.cat||CATS[0];const yrs=[...new Set(all.map(x=>fyr(x.date)).concat(['2026-27年度','2025-26年度','2024-25年度']))].sort().reverse();if(evYr!=='all'&&yrs.indexOf(evYr)<0)evYr='all';const inY=(x,y)=>y==='all'||fyr(x.date)===y;
 const ysel=()=>{const w=el('label','ysel');w.append(el('span',0,'年度'));const se=el('select');se.setAttribute('aria-label','選擇年度');[['all','全部年度']].concat(yrs.map(y=>[y,y])).forEach(([v,t])=>{const o=el('option',0,t);o.value=v;if(v===evYr)o.selected=true;se.append(o)});se.onchange=()=>{evYr=se.value;renderEvents()};w.append(se);return w};
 const mk=(c,yy)=>{const n=all.filter(x=>cat(x)===c&&inY(x,yy||'all')).length,b=el('button','cc');b.type='button';const yv=yy&&yy!=='all',fb=(()=>{for(const x of all){if(cat(x)===c&&(!yv||inY(x,yy))){const m=norm(x.imgs);if(m.length)return (m.find(o=>o.b)||m[0]).s}}return ''})(),cvr=yv?fb:(((S.covers._fix||{})[c]&&S.covers[c])||fb||S.covers[c]);if(cvr){const i=new Image();i.src=cvr;i.alt=c;b.append(i)}else{b.classList.add('empty');b.append(el('span','ring','◎'),el('span','soon','敬請期待'))}
-const lb=el('span','cl');lb.append(el('b',0,c),el('small',0,n+' 則'));b.append(el('i','nm','0'+(CATS.indexOf(c)+1)),lb,el('em','ar','→'));b.onclick=()=>{evTab=c;renderEvents();if(location.hash==='#events')window.scrollTo(0,0);else location.hash='#events'};return b};
+const lb=el('span','cl');lb.append(el('b',0,c),el('small',0,n+' 則'));b.append(lb,el('em','ar','→'));b.onclick=()=>{evTab=c;renderEvents();if(location.hash==='#events')window.scrollTo(0,0);else location.hash='#events'};return b};
 H.className='bento';CATS.forEach(c=>H.append(mk(c,'all')));
 if(evTab===null){L.className='cg bento';const tot=all.filter(x=>inY(x,evYr)).length,yb=el('div','yb'),yt=evYr==='all'?['全部','年度']:[evYr.replace('年度',''),'年度'];yb.append(el('b',0,yt[0]),el('span',0,yt[1]),el('small',0,'共 '+tot+' 則活動花絮'));T.append(yb,ysel());CATS.forEach(c=>L.append(mk(c,evYr)));L.classList.remove('pop');void L.offsetWidth;L.classList.add('pop')}
 else{L.className='';const bk=el('button','btn o','← 全部類別');bk.onclick=()=>{evTab=null;renderEvents()};T.append(bk,el('h3','ct',evTab),ysel());
@@ -1501,4 +1501,7 @@ sel.onchange=draw;draw()})();</script>
 
 
 
+<style id="v32">.bento .cc .nm{display:none!important}
+@media(min-width:901px){.bento .cc:nth-child(9){grid-column:1/3!important;grid-row:9/11!important}
+.bento .cc:nth-child(10){grid-column:3/5!important;grid-row:9/11!important}}</style>
 </body></html>
